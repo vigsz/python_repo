@@ -12,6 +12,8 @@ result = some_number + some_other_number
 
 items = ['1', '2', '3', '5']
 
+tuple = (1, 2 , 3 , 4)
+
 for item in items:
     print(item)
 
@@ -20,3 +22,5 @@ numbers = [1, 2, 3, 4, 5, 6]
 for number in numbers:
     if number % 2 == 0:
         print(number)
+
+print('Stuff')
