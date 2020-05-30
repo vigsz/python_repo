@@ -1,13 +1,8 @@
 import math
-import glasstypes
+import Types
 
-min = 0.35
-max = 2.5
-inc = 0.05
-b1 = 1
+b = Types.SpacerTypes.AL16
 # b2 = 1
-s1 = 7.3
-s2 = 9.9
 
 x_values = (.35,.4,.45,.5,.55,.6,.65,.7,.75,.8,.85,.9,.95,1,1.05,1.1,1.15,1.2,1.25,1.3,1.35,1.4,1.45,1.5,1.55,1.6,1.65,1.7,1.75,1.8,1.85,1.9,1.95,2,2.05,2.1,2.15,2.2,2.25,2.3,2.35,2.4,2.45,2.5)
 y_values = (.35,.4,.45,.5,.55,.6,.65,.7,.75,.8,.85,.9,.95,1,1.05,1.1,1.15,1.2,1.25,1.3,1.35,1.4,1.45,1.5,1.55,1.6,1.65,1.7,1.75,1.8,1.85,1.9,1.95,2,2.05,2.1,2.15,2.2,2.25,2.3,2.35,2.4,2.45,2.5)
@@ -21,16 +16,16 @@ def averagePriceCalcForDouble (glass1, glass2, spacer):
             surface = x_value * y_value
             length = 2 * x_value  + 2 * y_value
             surfaces.append(surface)
-            price = surface * glass1.price + surface * glass2.price + length * b1
+            price = surface * glass1.price + surface * glass2.price + length * b.price
             prices.append(price)
             pricesqm = price / surface
             pricessqm.append(pricesqm)
     # average_surface = sum(surfaces) / len(surfaces)
     average_pricesqm = sum(pricessqm) / len(pricessqm)
     rounded_average_pricesqm = round(average_pricesqm, 2)
-    print('Average price for %s + %s is: %.2f' %(glass1.name, glass2.name, rounded_average_pricesqm))
+    print('Average price for %s + %s + %s is: %.2f' %(glass1.name, b.name, glass2.name, rounded_average_pricesqm))
 
-averagePriceCalcForDouble(glasstypes.GlassTypes.F4, glasstypes.GlassTypes.L4, b1)
+averagePriceCalcForDouble(Types.GlassTypes.Float4, Types.GlassTypes.LowE4, b)
 
 # for surface in surfaces:
 #     print(surface)
