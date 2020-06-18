@@ -24,3 +24,10 @@ for number in numbers:
         print(number)
 
 print('Stuff')
+
+
+multi = ''' line 1 
+line 2
+line 3'''
+
+print(multi)
