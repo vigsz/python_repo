@@ -31,3 +31,21 @@ line 2
 line 3'''
 
 print(multi)
+
+def get_running_sum():
+    total_sum = 0 
+    total_items = 0 
+    def compute_sum(new_number):
+        nonlocal total_items, total_sum
+        total_items += 1 
+        total_sum += new_number
+        print("Total:{}. Items:{}".format(total_sum, total_items))
+        return total_sum
+    return compute_sum
+
+compute_sum = get_running_sum()
+
+compute_sum(5)
+compute_sum(15)
+compute_sum(25)
+compute_sum(35)
